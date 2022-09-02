@@ -470,6 +470,9 @@
   
   
   
+  .btn{
+    cursor: pointer;
+  }
   
   
   #conteudo .box-cupom{
@@ -740,3 +743,5 @@
           line-height: 1.2em;
       }
   }
+
+  

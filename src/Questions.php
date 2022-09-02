@@ -24,9 +24,9 @@ $questions = [
     3 => [
         "question" => "Qual jogador venceu o prêmio bola de ouro da Fifa no ano de 2021?",
         "alternatives" => [
-            "correct" => "Messi",
+            "Messi",
             "Cristiano Ronaldo",
-            "Lewandowski",
+            "correct" => "Lewandowski",
             "Luka Modric",		
         ],
     ],

@@ -224,6 +224,7 @@
         </div>
 
         <div id="result" style="display: none;">
+        
         </div>
     </section>
 </main>
@@ -238,6 +239,11 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script> -->
 <!-- <script type="text/javascript" src="js/aos/aos.js"></script> -->
 <script type="text/javascript">
+    function copiarcupom(){
+    navigator.clipboard.writeText("NIVERFUT12");
+}
+
+
     var rules_questions = {
       "nome": "required",
       "email": {

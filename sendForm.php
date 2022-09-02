@@ -57,6 +57,9 @@ if (isset($data['nome']) && isset($data['email']) && count($data['time']) > 0 &&
                     <div class="box-frase-cupom">
                         <span>NIVERFUT12</span>
                     </div>
+                    <div class="copiar" >
+                        <a onclick="copiarcupom();" class="btn" style="margin:0 auto;">COPIAR</a>
+                    </div>
                     <a href="https://www.futfanatics.com.br/" class="btn">IR PARA O SITE</a>
                 </div>
             '
