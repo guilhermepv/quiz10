@@ -1,0 +1,742 @@
+
+:root {
+    --fonte: 'Montserrat-Regular', sans-serif;;
+  
+  
+    --azul: #4076D5;
+    --branco: #E4E5E4;
+    --cinza: #3F3F3E;
+    --cinzaClaro: #949494;
+  }
+  
+  
+  * {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    list-style: none;
+    font-family: var(--fonte);
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    font-weight: normal;
+  }
+  
+  body{
+  }
+  
+  body.active{
+      transition: 1s;
+      opacity: 1;
+  }
+  
+  img{
+      max-width: 100%;
+  }
+  
+  main{
+      max-width: 100%;
+      overflow: hidden;
+  }
+  
+  div,ul{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      align-items: center;
+  }
+  
+  .loading {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background: #504e53;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999999999999;
+  }
+  
+  .loading img{
+      max-width: 200px;
+  }
+  
+  .linha-final {
+      position: absolute;
+      top: 60%;
+      left: -50%;
+      width: 10px;
+      height: 1px;
+      background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%);
+      background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(255,255,255,1) 100%);
+      background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#ffffff',GradientType=1 );
+      background: #fff;
+      animation: linha 1.5s linear infinite;
+  }
+  
+  @keyframes linha {
+      0%{
+          left: -30%;
+          width: 50px;
+      }
+  
+      100%{
+          width: 800px;
+          left: 120%;
+      }
+  }
+  
+  
+  
+  .container{
+      width: 85vw;;
+      margin: 0 auto;
+      max-width: 1300px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  #banner{
+      background-image: url(imgs/banner.jpg);
+      align-items: flex-end;
+      display: flex;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      height: 645px;
+  }
+  
+  #banner #scene{
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 10px;
+  }
+  
+  #banner #scene .layer1{
+      width: 700px;
+      height: 700px;
+      background-image: url(../imgs/modelo.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 0;
+      display: block;
+      bottom: 0;
+      left: calc(50% - 650px/2);
+  }
+  
+  #banner #scene .layer1 img{
+      display: none;
+  }
+  
+  #banner #scene .layer{
+      display: flex !important;
+      height: 100%;
+      align-items: flex-end;
+  }
+  
+  #banner .box-selo{
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      width: 140px;
+  }    
+  
+  #banner .box-banner{    
+      position: relative;
+      z-index: 1;
+      justify-content: center;
+  }
+  
+  #banner .box-banner img{ 
+      width: 100%;
+      max-width: 640px;
+  }
+  
+  #banner .box-logo{
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      width: 200px;
+  }  
+  
+  
+  
+  
+  
+  #conteudo {
+      overflow: hidden;
+      position: relative;
+      background-color: #504e53;
+  }
+  
+  #conteudo .container{
+      z-index: 1;
+      position: relative;
+  }
+  
+  #conteudo:before{
+      content: '';
+      width: 700px;
+      height: 700px;
+      border: 1px solid #c1913e;
+      display: block;
+      position: absolute;
+      bottom: 10%;
+      left: -40%;
+      transform: rotate(60deg);
+  }
+  
+  #conteudo:after{
+      content: '';
+      width: 700px;
+      height: 700px;
+      border: 1px solid #c1913e;
+      display: block;
+      position: absolute;
+      top: 5%;
+      right: -40%;
+      transform: rotate(60deg);
+  }
+  
+  #conteudo .box-form{
+      max-width: 600px;
+      margin: 0 auto;
+  }
+  
+  .errordiv{
+      padding: 12px 20px;
+      background: #db5454;
+      border-radius: 7px;
+      color: #fff;
+      font-size: 0.9em;
+      letter-spacing: 0.2px;
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: 400px;
+      z-index: 9999;
+      width: 90vw;
+  }
+  
+  .errordiv p{
+      text-align: left;
+      width: 100%;
+      font-size: 0.9em;
+  }
+  
+  #conteudo .box-form form{
+      width: 100%;
+      margin: 30px 0;
+  }
+  
+  #conteudo .box-form .box-input{
+      border: 1px solid #c1913e;
+      background-color: #504e53;
+      margin: 15px 0;
+      border-radius: 10px;
+  }
+  
+  #conteudo .box-form .box-input input{
+      background-color: transparent;
+      width: 100%;
+      padding: 12px 15px;
+      border: 0 solid transparent;
+      color: #fff;
+  }
+  
+  
+  #conteudo .box-form .box-input input::placeholder{
+      color: #fff;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta{
+      border: 1px solid #c1913e;
+      background-color: #504e53;
+      margin-bottom: 30px;
+      position: relative;
+      border-radius: 10px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta:before{
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #c1913e;
+      position: absolute;
+      display: block;
+      bottom: -16px;
+      left: 0;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta:last-child:before{
+      display: none;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta{
+      border-bottom: 1px solid #c1913e;
+      padding: 5px 20px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-icon{
+      width: 100px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-icon span{
+      font-size: 50px;
+      font-family: "Montserrat-Bold";
+      color: #c1913e;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-icon span.hashtag{
+      font-size: 50px;
+      font-family: "Montserrat-Bold";
+      color: #c1913e;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-pergunta{
+      width: calc(100% - 100px);
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-pergunta h3{
+  
+      font-family: "Montserrat-Bold";
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.9;
+      font-size: 1.2em;
+      line-height: 1.1em;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta{
+      padding: 20px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li{
+      width: 100%;
+      margin: 8px 0;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
+  
+  #conteudo .box-form label.error{
+      display: none !important;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio{
+      position: relative;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio input[type='radio']{
+      appearance: radio;
+      visibility: hidden;
+  }  
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio span{
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      border: 1px solid #c1913e;
+      background: transparent;
+      border-radius: 50px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio input[type=radio]:checked + span:after {
+      opacity: 1;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio span:hover::after {
+      opacity: 0.3;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio span:after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background: #c1913e;
+      opacity: 0;
+      border-radius: 50px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label .box-radio{
+      width: 35px;
+      height: 20px;
+  }
+  
+  #conteudo .box-form .box-bloco-pergunta .box-body-pergunta ul li label p{
+      width: calc(100% - 35px);
+      color: #fff;
+      opacity: 0.9;
+      font-size: 0.8em;
+      text-transform: uppercase;
+  }
+  
+  #conteudo .box-form .box-btn{
+      justify-content: center;
+  }
+  
+  #conteudo .box-form .box-btn input{
+      background-color: #c1913e;
+      transition: 0.2s;
+      padding: 2px 40px;
+      cursor: pointer;
+      border: 2px solid #c1913e;
+      border-radius: 10px;
+      font-size: 18px;
+      font-family: "Montserrat-Bold";
+      color: #fff;
+  }
+  
+  #conteudo .box-form .box-btn input:hover{
+      background-color: #504e53;
+  }
+  
+  
+  
+  
+  
+  
+  .select2{
+      width: 100% !important;
+  }
+  
+  .select2-container--default .select2-selection--multiple{
+      border: 0 transparent;
+      outline: 0;
+      background: transparent; 
+  }
+  
+  .select2-container--default.select2-container--focus .select2-selection--multiple {
+      border: 0 transparent;
+      outline: 0;
+      background: transparent;
+  }
+  
+  .select2-results__option--selectable{
+      width: 100%;
+  }
+  
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      border: 0;
+  }
+  
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+      transition: 0.2s;
+      background-color: #c1913e;
+      border: none;
+      border-right: 0px solid #aaa;
+      color: #fff;
+  }
+  
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+      background-color: #ff4646;
+      color: #fff;
+  }
+  
+  .select2-container--default .select2-search--inline .select2-search__field{
+      color:#fff;
+      font-size: 14px;
+  }
+
+  .select2-container--default .select2-search--inline .select2-search__field::placeholder{
+      color:#fff;
+      font-size: 14px;
+      padding-left: 10px;
+      padding-top: 3px;
+  }
+  
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+      font-size: 12px;
+  }
+  
+  
+  
+  
+  
+  #conteudo .box-cupom{
+      display: none;
+      max-width: 600px;
+      margin: 100px auto 50px;
+  }
+  
+  
+  #conteudo .box-cupom.active{
+      display: flex; 
+  }
+  
+  #conteudo .box-cupom .box-icon-cupom{
+      justify-content: center;
+      margin-bottom: 30px;
+  }
+  
+  #conteudo .box-cupom .box-icon-cupom img{
+      max-width: 80px;
+  }
+  
+  #conteudo .box-cupom h3{
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      font-family: "Montserrat-Bold";
+      color: #fff;
+      font-size: 1.6em;
+      margin-bottom: 10px;  
+  }
+  
+  #conteudo .box-cupom h2{
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      font-family: "Montserrat-Bold";
+      line-height: 1em;
+      color: #c4933d;
+      font-size: 2.8em;
+  }
+  
+  #conteudo .box-cupom .box-selo-bolas{
+      justify-content: center;
+      margin: 30px 0;
+  }
+  
+  #conteudo .box-cupom .box-selo-bolas img{
+      width: 40px;
+      margin: 0 10px;
+  }
+  
+  #conteudo .box-cupom .box-frase{
+  
+  }
+  
+  
+  #conteudo .box-cupom .box-frase p span{
+      font-family: "Montserrat-Bold";
+      display: block;
+      font-size: 1.1em;
+      color: #c4933d;
+  }
+  
+  #conteudo .box-cupom .box-frase.especial p span{
+      display: inline-block;
+  }
+  
+  #conteudo .box-cupom .box-frase p{
+      max-width: 250px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: "Montserrat-Bold";
+      line-height: 1.2em;
+      font-size: 1.1em;
+      color: #fff;
+  }
+  
+  #conteudo .box-cupom .box-frase.caro p{
+      max-width: 330px;
+  }
+  
+  #conteudo .box-cupom .box-frase.especial p{
+      max-width: 100%;
+  }
+  
+  
+  #conteudo .box-cupom .box-frase-cupom{
+      position: relative;
+      margin: 20px auto;
+      justify-content: center;
+  }
+  
+  #conteudo .box-cupom .box-frase-cupom:before{
+      content: '';
+      height: 30px;
+      display: block;
+      position: absolute;
+      top: 3px;
+      width: 215px;
+      border-radius: 10px;
+      z-index: 0;
+      background-color: #c4933d;
+  }
+  
+  #conteudo .box-cupom .box-frase-cupom span{
+      color: #fff;
+      background-color: #504e53;
+      position: relative;
+      z-index: 1;
+      font-family: "Montserrat-Bold";
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      width: 200px;
+      border: 1px dashed #c4933d;
+      text-align: center;
+      padding: 3px;
+      border-radius: 10px;
+  }
+  
+  #conteudo .box-cupom a.btn{
+      display: inline-block;
+      width: auto;
+      background: #c4933d;
+      color: #fff;
+      text-align: center;
+      padding: 5px 30px;
+      border-radius: 10px;
+      border: 2px solid #c4933d;
+      transition: 0.2s;
+      font-family: "Montserrat-Bold";
+      margin: 30px auto 0;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+  
+  }
+  
+  #conteudo .box-cupom a.btn:hover{
+      background-color: #504e53;
+  }
+  
+  
+  footer{
+      justify-content: center;
+      display: flex;
+      background: #504e53;
+      padding: 55px 0 80px;
+  }
+  
+  footer img{
+      max-width: 200px;
+  }
+  
+  
+  #bannermob{
+    display: none;
+  }
+  @media(max-width: 701px){
+  
+  #bannermob{
+    display: flex;
+    margin: 0 auto;
+  }
+  #bannerdesk{
+    display: none;
+  }
+  
+  
+  
+  
+  @media(max-width: 978px){
+  
+  #conteudo:before{
+      display: none;
+  }
+  
+  #conteudo:after{
+    display: none;
+  }
+
+      #banner .box-selo {
+          top: 20px;
+          left: 30px;
+          width: 60px;
+      }
+  
+      #banner .box-logo {
+          top: 30px;
+          right: 20px;
+          width: 100px;
+      }
+  
+      #banner #scene{
+          bottom: 0;
+      }
+  
+      #banner #scene .layer1 {
+          width: 100%;
+          height: 100%;
+          background-position:  bottom;
+      }
+  
+      #banner #scene .layer {
+          position: absolute;
+          max-width: 90%;
+      }
+  
+      footer img{
+          max-width: 150px;
+      }
+  }
+  
+  @media(max-width: 500px){
+  
+  
+      .errordiv{
+          right: 5vw;
+      }
+  
+      .errordiv p{
+          font-size: 1.2em;
+      }
+  
+      #banner {
+          height: auto;
+          width: 100%;
+          display: block;
+      }
+  
+      #banner #scene {
+          position: static;
+          width: 100%;
+          display: block;
+      }
+  
+      #banner .container {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          justify-content: space-between;
+          width: 100%;
+      }
+  
+      #banner .box-selo {
+          top: 20px;
+          left: 30px;
+          width: 60px;
+      }
+  
+      #banner .box-logo {
+          top: 25px;
+          right: 20px;
+          width: 80px;
+      }
+  
+      #banner #scene .layer {
+          top: 0;
+          left: 5%;
+      }
+  
+      #banner #scene .layer1 img{
+          display: block;
+      }
+  
+  
+      #conteudo .box-form .box-bloco-pergunta .box-topo-pergunta .box-pergunta h3 {
+          font-size: 1em;
+          line-height: 1.2em;
+      }
+  }
