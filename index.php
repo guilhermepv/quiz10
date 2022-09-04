@@ -257,5 +257,100 @@
     };
 </script>
 <script src="js/script.js?v=<?=time()?>"></script>
+
+<style>
+#box-lgpd {    
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    background: #fff;
+    max-width: 1000px;
+    left: calc(50% - 1000px/2);
+    padding: 10px;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 16000004
+}
+
+#box-lgpd .box-info {
+    width: calc(100% - 200px)
+}
+
+#box-lgpd .box-info p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding-right: 20px;    
+    margin-top: 0;
+}
+
+#box-lgpd .box-info p:last-child {
+    margin-bottom: 0
+}
+
+#box-lgpd .box-info p a {
+    color: #0066b3
+}
+
+#box-lgpd > a {
+    display: block;
+    width: 200px;
+    text-align: center;
+    background: #c1913e;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: .2s;
+}
+
+#box-lgpd > a:hover {
+    background: #c1913e;
+}
+
+@media(max-width:1000px) {
+    #box-lgpd {
+        width: 97%;
+        left: 1.5%;
+    }
+}
+
+@media(max-width:500px) {
+    #box-lgpd {
+        width: 97%;
+        left: 1.5%;
+    }
+    #box-lgpd .box-info {
+        width: 100%
+    }
+    #box-lgpd>a {
+        width: 100%;
+        margin-top: 20px
+    }
+}
+</style>
+<section id="box-lgpd" style="display: none;"><div class="box-info"><p>Usamos cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa <a target="_blank" href="https://www.futfanatics.com.br/politica-de-privacidade">Política de Privacidade</a>.</p></div><a href="javascript:;" id="lgpd-consent-button">continuar e fechar</a></section>
+<script>
+jQuery(document).ready(function(){
+     var lgpdConsent = localStorage.getItem('lgpd-consent');
+     var lgpd = jQuery('#box-lgpd');
+     var btnConsent = lgpd.find('#lgpd-consent-button');
+     
+     if(lgpd && lgpd.length) {    
+        if(!lgpdConsent){
+            lgpd.show();
+        }
+     }
+
+     btnConsent.click(function(){
+        localStorage.setItem('lgpd-consent', true);    
+        lgpd.fadeOut();
+        return false;
+     });
+});
+</script>
 </body>
 </html>
